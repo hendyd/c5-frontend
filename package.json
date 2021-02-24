@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,21 @@
   "bugs": {
     "url": "https://github.com/limegreentangerine/c5-frontend/issues"
   },
-  "homepage": "https://github.com/limegreentangerine/c5-frontend#readme"
+  "homepage": "https://github.com/limegreentangerine/c5-frontend#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "bootstrap": "^4.6.0",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.2.0",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.2",
+    "gulp-include": "^2.4.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
 }
