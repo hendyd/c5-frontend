@@ -4,6 +4,8 @@ Version ```1.0.0```
 
 Frontend build build framework with customisations for LGT Concrete5 CMS integrations.
 
+Issues, improvements and features requests should be directed to Github [Issues](https://github.com/limegreentangerine/c5-frontend/issues)
+
 ---
 
 ## System Requirements
