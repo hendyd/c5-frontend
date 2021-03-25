@@ -87,6 +87,10 @@ I will be creating a task that will compile all files into a nice package we can
 
 ---
 
-Build by [Lee Jones](lee@limegreentangerine.co.uk) for [Limegreentangerine](https://www.limegreentangerine.co.uk)
+## Credits
+
+**Author:** [Lee Jones](lee@limegreentangerine.co.uk)
+
+&copy; 2021 [Limegreentangerine](https://www.limegreentangerine.co.uk)
 
 Last Updated: March 2021
