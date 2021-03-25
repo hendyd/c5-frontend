@@ -12,7 +12,9 @@
     </head>
 <body>
     <div class="ccm-page">
+        <?php require_once('./elements/header.php'); ?>
         <h4><code>index.php</code></h4>
+        <?php require_once('./elements/footer.php'); ?>
     </div>
 
     <script async defer src="./dist/site.css"></script>
