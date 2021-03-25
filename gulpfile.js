@@ -8,6 +8,7 @@ const cssnano = require('cssnano');
 const include = require('gulp-include');
 const changed = require('gulp-changed');
 const browserSync = require('browser-sync').create();
+const babel = require('gulp-babel');
 require('dotenv').config();
 
 const paths = {
@@ -45,7 +46,12 @@ function buildStyles() {
     return src(paths.stylesCompile)
         .pipe(changed(paths.dist))
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: [
+                'node_modules'
+            ]
+        }).on('error', sass.logError))
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest(paths.dist));
@@ -55,8 +61,17 @@ function buildStyles() {
 function buildScripts() {
     return src(paths.scriptsCompile)
         .pipe(changed(paths.dist))
+        .pipe(babel({
+            presets: [
+                '@babel/preset-env'
+            ]
+        }))
         .pipe(sourcemaps.init())
-        .pipe(include()).on('error', console.log)
+        .pipe(include({
+            includePaths: [
+                'node_modules'
+            ]
+        })).on('error', console.log)
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
         .pipe(dest(paths.dist));

@@ -18,15 +18,21 @@
     "url": "https://github.com/limegreentangerine/c5-frontend/issues"
   },
   "homepage": "https://github.com/limegreentangerine/c5-frontend#readme",
-  "dependencies": {},
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
     "autoprefixer": "^10.2.4",
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.6.0",
     "browser-sync": "^2.26.14",
     "concurrently": "^6.0.0",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-changed": "^4.0.2",
     "gulp-include": "^2.4.1",
     "gulp-postcss": "^9.0.0",
