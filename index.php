@@ -17,6 +17,6 @@
         <?php require_once('./elements/footer.php'); ?>
     </div>
 
-    <script async defer src="./dist/site.css"></script>
+    <script async defer src="./dist/site.js"></script>
 </body>
 </html>
