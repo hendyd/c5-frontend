@@ -12,6 +12,7 @@ const babel = require('gulp-babel');
 require('dotenv').config();
 
 const paths = {
+    assets: './assets',
     styles: './src/scss/**/*.scss',
     stylesCompile: './src/scss/site.scss',
     scripts: './src/js/**/*.js',
@@ -77,6 +78,13 @@ function buildScripts() {
         .pipe(dest(paths.dist));
 }
 
+function copyAssets() {
+    return src([
+        paths.assets + '/**/*'
+    ])
+    .pipe(dest(paths.dist));
+}
+
 // watch
 function watchTask() {
     watch(
@@ -88,6 +96,7 @@ function watchTask() {
         series(
             buildStyles,
             buildScripts,
+            copyAssets,
             browserSyncReload
         )
     );
@@ -96,11 +105,13 @@ function watchTask() {
 exports.default = parallel(
     buildStyles,
     buildScripts,
+    copyAssets,
     browserSyncServe,
     watchTask
 );
 
 exports.build = series(
     buildStyles,
-    buildScripts
+    buildScripts,
+    copyAssets
 );
