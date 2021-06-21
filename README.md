@@ -14,6 +14,12 @@ Issues, improvements and features requests should be directed to Github [Issues]
 - ``Node``
 - ``NPM``
 - ``Gulp``
+- 
+---
+
+## Windows Installations
+
+Please follow [this guide](https://docs.google.com/document/d/1xHTJ0yu5r8GDy9PapHvjtg4K8tHagiRsro08_l-H2I0) before continuing.
 
 ---
 
