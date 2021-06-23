@@ -8,7 +8,8 @@
     "build:prod": "npm run remove:dist && npm run webpack:prod",
     "remove:dist": "rm -rf ./dist",
     "webpack:dev": "NODE_ENV=development webpack --config webpack.config.js",
-    "webpack:prod": "NODE_ENV=production webpack --config webpack.config.js"
+    "webpack:prod": "NODE_ENV=production webpack --config webpack.config.js",
+    "webpack:watch": "NODE_ENV=development webpack --config webpack.config.js --watch"
   },
   "repository": {
     "type": "git",
