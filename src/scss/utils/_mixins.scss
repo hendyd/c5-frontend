@@ -80,7 +80,7 @@
 @mixin svg-fill($color) {
     svg {
         path {
-            fill: $secondary;
+            fill: $color;
         }
     }
 }
