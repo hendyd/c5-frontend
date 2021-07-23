@@ -14,7 +14,6 @@ Issues, improvements and features requests should be directed to Github [Issues]
 - ``Node``
 - ``NPM``
 - ``Gulp``
-- 
 ---
 
 ## Windows Installations
@@ -25,7 +24,7 @@ Please follow [this guide](https://docs.google.com/document/d/1xHTJ0yu5r8GDy9Pap
 
 ## Installation and Use
 
-This will be available as a template in the Limegreentangerine Github repository. Create a new repo using theis template, the clone to your system, then run:
+This will be available as a template in the Limegreentangerine Github repository. Create a new repo using this template, the clone to your system, then run:
 
 ```
 npm install
