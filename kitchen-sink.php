@@ -1,3 +1,4 @@
+<?php require_once('./globals.php'); ?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -17,9 +18,9 @@
             }
         </style>
 
-        <link rel="preload" href="./dist/site.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <link rel="preload" href="<?php echo AutoCache::cache('./dist/site.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript>
-            <link href="./dist/site.css" type="text/css" rel="stylesheet" media="screen, print, projection" />
+            <link href="<?php echo AutoCache::cache('./dist/site.css'); ?>" type="text/css" rel="stylesheet" media="screen, print, projection" />
         </noscript>
     </head>
 <body>
@@ -1164,6 +1165,6 @@
         <!--  /.container-fluid    -->
     </div>
 
-    <script async defer src="./dist/site.js"></script>
+    <script async defer src="<?php echo AutoCache::cache('./dist/site.js'); ?>"></script>
 </body>
 </html>
