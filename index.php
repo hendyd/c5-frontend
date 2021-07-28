@@ -1,3 +1,4 @@
+<?php require_once("./globals.php"); ?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -5,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" type="image/png" href="./favicon.png">
         <title>C5 Frontend</title>
-
         <style>
             body {
                 opacity: 0;
@@ -17,9 +17,9 @@
             }
         </style>
 
-        <link rel="preload" href="./dist/site.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <link rel="preload" href="<?php echo AutoCache::cache('./dist/site.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript>
-            <link href="./dist/site.css" type="text/css" rel="stylesheet" media="screen, print, projection" />
+            <link href="<?php echo AutoCache::cache('./dist/site.css'); ?>" type="text/css" rel="stylesheet" media="screen, print, projection" />
         </noscript>
     </head>
 <body>
@@ -29,6 +29,6 @@
         <?php require_once('./elements/footer.php'); ?>
     </div>
 
-    <script async defer src="./dist/site.js"></script>
+    <script async defer src="<?php echo AutoCache::cache('./dist/site.js'); ?>"></script>
 </body>
 </html>
