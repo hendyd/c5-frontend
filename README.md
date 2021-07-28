@@ -86,6 +86,29 @@ This framework uses `PHP` to make including sections easier. To include an eleme
 
 ---
 
+## Tips and tricks
+
+### Browser caching
+When it comes to deploying to the development server, you may experience some low-level browser caching. to get around this, please make sure to wrap your CSS and JS file includes in the AutoCache class. This should reduce any caching experienced during testing.
+To do this, you will need to add the following line to the top of all your pages.
+```
+<?php require_once("./globals.php"); ?>
+```
+To utilise this method for your CSS and JS, please use the following templated code:
+```
+<script async defer src="<?php echo AutoCache::cache('./dist/site.js'); ?>"></script>
+```
+
+### Using images and fonts
+When adding these to your site, you will need to make use of both the `/assets/` and `/dist/` folders.
+* `HTML`
+    * `./dist/images/`
+* `CSS`
+    * `../assets/images/`
+Using them like this reduces any further debugging when migrating from local to development/live server.
+
+---
+
 ## Future Developments
 
 I will be creating a task that will compile all files into a nice package we can drop in the theme folder in our concrete builds.
@@ -98,4 +121,4 @@ I will be creating a task that will compile all files into a nice package we can
 
 &copy; 2021 [Limegreentangerine](https://www.limegreentangerine.co.uk)
 
-Last Updated: March 2021
+Last Updated: July 2021
