@@ -152,3 +152,121 @@
         object-position: center;
     }
 }
+
+/**
+Usage:
+    body {
+        a {
+            @include links(red, green, blue, yellow, pink);
+        }
+    }
+*/
+@mixin links($link, $visit, $hover, $active, $focus){
+    & {
+        color: $link;
+        &:visited {
+            color: $visit;
+        }
+        &:hover {
+            color: $hover;
+        }
+        &:active {
+            color: $active;
+        }
+        &:focus {
+            color: $focus;
+        }
+    }
+}
+
+/** BEM classification */
+/**
+Usage:Usage:
+    .block {
+        @include element('element') {
+            .block__element
+        }
+    @include modifier('modifier') {
+        .block--modifier
+        @include element('element') {
+            .block--modifier__element
+        }
+    }
+}
+*/
+
+@mixin element($element){
+    &__#{$element}{
+        @content;
+    }
+}
+
+@mixin modifier($modifier){
+    &--#{$modifier}{
+        @content;
+    }
+}
+
+/**
+Usage
+    body {
+        @include scrollbars(10px, pink, red);
+    }
+    .custom-area {
+        @include scrollbars(.5em, slategray);
+    }
+*/
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+
+    // For Internet Explorer
+    & {
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+    }
+}
+
+/// Since the current way to qualify a class from within its ruleset is quite
+/// ugly, here is a mixin providing a friendly API to do so.
+/// @param {String} $element-selector - Element selector
+/** Usage: 
+.button {
+  border: none;
+  
+  // Qualify `.button` with `button`
+  @include qualify(button) {
+    -webkit-appearance: none;
+  }
+  
+  // Qualify `.button` with `a`
+  @include when-is(a) {
+    text-decoration: none;
+  }
+}
+*/
+
+@mixin qualify($element-selector) {
+    @at-root #{$element-selector + &} {
+        @content;
+    }
+}
+
+@mixin when-is($args...) {
+  @include qualify($args...) {
+    @content;
+  }
+}
+
+
