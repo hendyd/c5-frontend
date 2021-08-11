@@ -207,37 +207,6 @@ Usage:Usage:
     }
 }
 
-/**
-Usage
-    body {
-        @include scrollbars(10px, pink, red);
-    }
-    .custom-area {
-        @include scrollbars(.5em, slategray);
-    }
-*/
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
-    // For Google Chrome
-    &::-webkit-scrollbar {
-        width:  $size;
-        height: $size;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: $foreground-color;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: $background-color;
-    }
-
-    // For Internet Explorer
-    & {
-        scrollbar-face-color: $foreground-color;
-        scrollbar-track-color: $background-color;
-    }
-}
-
 /// Since the current way to qualify a class from within its ruleset is quite
 /// ugly, here is a mixin providing a friendly API to do so.
 /// @param {String} $element-selector - Element selector
